@@ -3,51 +3,43 @@
 
 ### Type of database
 - Relational
-- **schema** 
-  - Structure: how data would be structured. The data used in the system has a fixed data model
-  - Constraints: you can ensure some garbage data can be stored.
-- **acid property** -  Transactionality
-- Pros:
-  - easy to perform vertical scaling
-- Cons
+  - **schema** 
+    - Structure: how data would be structured. The data used in the system has a fixed data model
+    - Constraints: you can ensure some garbage data can be stored.
+  - **acid property** -  Transactionality
+  - **Pros**:
+    - easy to perform vertical scaling
+  - **Cons**
   - Difficult to perform horizontal scaling
   
 - Non-relational
-- Key value store db (e.g. redis, memcache, dynamodb)
-  - used: In caching solution
-- Document db
-  - Pros:
-    - Mostly used when there is no fixed schema
-    - Fast read and write
-    - Database sharding
-    - Database scaling
-  - Cons
-    - Acid property is not provided by the dbms 
+  - Key value store db (e.g. redis, memcache, dynamodb)
+    - used: In caching solution
+  - Document db
+    - Pros:
+      - Mostly used when there is no fixed schema
+      - Fast read and write
+      - Database sharding
+      - Database scaling
+    - Cons
+      - Acid property is not provided by the dbms 
 
-- Columnar DB
-  - Mostly used while there is a heavy write (storing health tracking data, analytical data)
-  - Special Type of Heavy Reading: The table structure is defined based on the query.
-  - It has a great support for distributed database
-  - example. casandra 
+  - Columnar DB
+    - Mostly used while there is a heavy write (storing health tracking data, analytical data)
+    - Special Type of Heavy Reading: The table structure is defined based on the query.
+    - It has a great support for distributed database
+    - example. casandra 
 
-- Search DB 
-  - Full text search queries are suppored by search databse
-  - Indexes are created to make the searching faster
-  - The data stored in the search DB is not the primary data store. Frequent datas or query data are stored in the search database
-  
-- Graph databases (e.g. Neo4j)
+  - Search DB 
+    - Full text search queries are suppored by search databse
+    - Indexes are created to make the searching faster
+    - The data stored in the search DB is not the primary data store. Frequent datas or query data are stored in the search database
 
-- Network db
-- file db
+  - Graph databases (e.g. Neo4j)
 
-- API
-- abstraction 
-- streamline the communication among multiple componenets
-- Impt points
-- Response code
-- Rate limiting & throtting
-- Safe gaurd the server by validating the data (API Security)
-- Add authentication requirement for private API (API Security)
+  - Network db
+  - File db
+
 
 ###  Database replication
 If the replication lag is > t3 - t2
@@ -69,18 +61,18 @@ If the replication lag is > t3 - t2
 https://www.youtube.com/watch?v=aE2UPg3Ckck
 
 - Pros and cons of database replication
-- Pros: 
-  - Horizontal Scaling 
-  - DB per region
-- Cons
-  - Eventual consistency
-  - Slow writes (synchronous replication)
-  - Difficulties in replication in a Multi-master setup
+  - Pros: 
+    - Horizontal Scaling 
+    - DB per region
+  - Cons
+    - Eventual consistency
+    - Slow writes (synchronous replication)
+    - Difficulties in replication in a Multi-master setup
 
 - NOSQL - (BASE) Basically available Soft state Eventual consitency
 - CAP Theorm (Consistency, Availability, Pertition to)
-- ![cap theorm](cap theorm.PNG)
-- We can tolerate the partioning by implementing eventual consistency.Thats when the link between the two datastore is established, then updates are propagated eventually. Based on the type of system, we have to decide whether we should decide which properties must be maintained.
+  - ![cap theorm](cap theorm.PNG)
+  - We can tolerate the partioning by implementing eventual consistency.Thats when the link between the two datastore is established, then updates are propagated eventually. Based on the type of system, we have to decide whether we should decide which properties must be maintained.
 
 
 
