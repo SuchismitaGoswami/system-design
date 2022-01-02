@@ -1,0 +1,35 @@
+## Proxy
+  - **Forward proxy** 
+    - Usecase 
+      - caching data
+      - securing server from clients 
+      - forward traffic
+      - blocking some website inside organization
+        - Types 
+          - **Half proxy**: The proxy server just forward the same connection request from the client to the server. The server responds back to the client directly, not via any proxy in between. 
+          - **Full proxy**: The proxy server terminates the connection request and create  a new connection for every request to the server. The same technique is applied while responding back to the client.
+
+  - **Big IP**: This s a type of full proxy where the filtering of packets could be done at the network layer.
+  - **Reverse proxy**: This is a type of full proxy where filtering of packets could be done at the network layer as well as the application layer(L7).
+    - Proxy server routes the traffic to different servers based on some rules. This could be multiple instance of the same server. So, client is not aware of how the servers are set up
+    - It can be used in
+      - securty
+        - rate limiting
+        - DDos Attack 
+      - caching the request
+      - ssl termination
+      - improving security
+      - can act as a load balancer
+      - can act as an ingress
+      - canary deployment
+      - Compressing the request
+      - Example: API gateway
+  - Must watch
+    - What is a Proxy?: https://www.youtube.com/watch?v=jGQTS1CxZTE
+    - Proxy vs. Reverse Proxy (Explained by Example): https://www.youtube.com/watch?v=ozhe__GdWC8
+      - https://www.youtube.com/watch?v=AuINJdBPf8I
+    - Service mesh as the reverse proxy: https://www.youtube.com/watch?v=QiXK0B9FhO0
+    - https://www.youtube.com/watch?v=MiqrArNSxSM
+  - Sock proxy
+  - Http Proxy
+  - Transparent Proxt
